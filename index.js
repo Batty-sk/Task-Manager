@@ -22,7 +22,13 @@ mongoDB.connect(`mongodb+srv://${username}:${password}@cluster0.wa3ihmp.mongodb.
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors())
+app.use(cors(
+    {
+        origin:["*"],
+        methods:["POST","GET"],
+        credentials:true,
+    }
+))
 app.use(Express.static('public'))
 app.use('/api',Router)
 app.use('*',Express.static('public'))
