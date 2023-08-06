@@ -13,6 +13,7 @@ const getTask= (req,res)=>{
     });
 }
 const createtask= async(req,res)=>{
+  console.log("Getting the Request....")
     try {
         const { title, description, status, dueDate } = req.body;
         const newTask = new model({ title, description, status, dueDate });
@@ -27,6 +28,7 @@ const createtask= async(req,res)=>{
           res.status(400).json({ message: errorMessage });
         } 
         else {
+          
           res.status(500).json({ message: 'Internal Server Error' });
         }
       }
