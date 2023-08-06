@@ -13,14 +13,11 @@ dotenv.config();
 const username = process.env.MONGODB_USERNAME;
 const password = process.env.MONGODB_PASSWORD;
 
-console.log(username)
-console.log(password)
 mongoDB.connect(`mongodb+srv://${username}:${password}@cluster0.wa3ihmp.mongodb.net/Task?retryWrites=true&w=majority`,{ 
     useNewUrlParser: true,
     useUnifiedTopology: true,}).then(()=>{console.log('Database Connection Establish Successfully!')}).catch(error=>{
         console.log('error has been occured!',error)
     })
-module.exports=mongoDB
 
 
 app.use(bodyParser.json());
@@ -30,7 +27,7 @@ app.use(Express.static('build'))
 app.use('/api',Router)
 
 
-app.listen(8000,()=>{
+app.listen(3000,()=>{
     console.log('Server has been started')
 }
 )

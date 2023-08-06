@@ -27,7 +27,6 @@ const createtask= async(req,res)=>{
           res.status(400).json({ message: errorMessage });
         } 
         else {
-          console.log('error', error);
           res.status(500).json({ message: 'Internal Server Error' });
         }
       }
@@ -50,7 +49,6 @@ const updatetask = (req, res) => {
       if (error.name === 'ValidationError') {
         res.status(400).json({ message: error.message });
       } else {
-        console.log('error', error);
         res.status(500).json({ message: 'Internal Server Error' });
       }
     });
