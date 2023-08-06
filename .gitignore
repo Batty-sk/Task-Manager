@@ -1,0 +1,7 @@
+# Ignore node_modules directory and its content
+node_modules/
+
+# Ignore .env file (containing sensitive information like passwords)
+.env
+
+# Ignore log files
